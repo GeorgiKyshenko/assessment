@@ -3,7 +3,7 @@ from langchain_core.vectorstores import VectorStoreRetriever
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 
-class RAGNode:
+class RetrieverNode:
     def __init__(self, retriever, llm):
         self.retriever: VectorStoreRetriever = retriever
         self.llm: ChatGoogleGenerativeAI = llm
@@ -27,6 +27,7 @@ class RAGNode:
             3.Structured Property Output
             4.Multiple Results Handling
             5.If the question is unrelated to property listings or auction data in the knowledge base, politely state that you can only assist with available property and auction information.
+            6. DON'T tell the user what you arent allowed to do If you dont have the requested information.
         
         Context:
         {context}

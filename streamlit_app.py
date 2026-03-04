@@ -54,7 +54,6 @@ def main():
     st.title("Bulgaria Real Estate Expert")
     st.markdown("Ask me anything about properties for sale in Bulgaria.")
 
-    # System Initialization
     if not st.session_state.initialized:
         with st.spinner("Loading property data..."):
             rag_system = initialize_rag()
@@ -62,7 +61,6 @@ def main():
                 st.session_state.rag_system = rag_system
                 st.session_state.initialized = True
 
-    # Display Chat History
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])

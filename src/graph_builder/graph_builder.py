@@ -1,12 +1,11 @@
 from langgraph.graph import StateGraph, END
 from src.state.rag_state import RAGState
-from src.nodes.nodes import RAGNode
-from src.nodes.react_agent import RAGNode
+from src.nodes.nodes import RetrieverNode
 
 
 class GraphBuilder:
     def __init__(self, retriever, llm):
-        self.nodes = RAGNode(retriever, llm)
+        self.nodes = RetrieverNode(retriever, llm)
         self.graph = None
 
     def build(self):
